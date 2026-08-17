@@ -1,10 +1,6 @@
-def grosekleine (w):
-    wordlist=set()
-    wordlist.add(w.lower())
-
-    wordlist.add(w.upper())
-
-    wordlist.add(w)
-    return wordlist
-firas=grosekleine("firas")
-print(firas)
+import argparse
+parser= argparse.ArgumentParser()
+parser.add_argument("-i","--input",required=True,help="-i input.txt")
+parser.add_argument("-o","--output",required=True,help="-o output.txt")
+arg = parser.parse_args()
+print(arg.input)

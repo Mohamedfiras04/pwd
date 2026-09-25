@@ -1,6 +1,7 @@
 import argparse
 import os
 from fileinput import close
+import secrets
 
 parser= argparse.ArgumentParser()
 parser.add_argument("-i","--input",required=True,help=" input txt")
@@ -75,7 +76,7 @@ if level==2 :
          "truelove", "honeybunny", "cutiepie",
          "password", "123456", "123456789", "qwerty", "qwerty123", "admin", "welcome",
          "letmein", "monkey", "football", "dragon", "master", "sunshine", "princess",
-         "superman", "batman", "starwars", "trustno1", "whatever", "freedom",
+         "superman", "batman", "starwars", "trustno1",  "freedom",
          "family", "mother", "father", "mama", "papa", "baby", "angel", "sweetie",
          "darling", "honey", "wife", "husband", "bestfriend",
          "tiger", "lion", "eagle", "falcon", "phoenix", "shadow", "ninja", "dragon2",
@@ -105,16 +106,21 @@ if level==2 :
         for t in hauptlist_V2:
             if len (w+t)>= long:
                 wordlist.append(w+t)
-            for x in hauptlist_V2:
-                if len (w+t+x)>= long:
-                    wordlist.append(w+t+x)
+            
 
                     
             
       
     
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" hier fhler die logik von die reschnug vonn passeworte  Level 3   "
+if level== 3 :
+    wordlist=[]
+    alpha = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","u","r","s","t","u","v","w","x","y","z","q","Q","W","E","R","T","Z","U","I","O","P","Ü","*","Ä","Ö","L","K","J","H","G","F","D","S","A","Y","X","C","V","B","N","M","1","2","3","4","5","6","7","8","9","0","@","-","_","+","*","#","?","!","§","$","%","&","=","~"]
+    for i in range (5000):
+        word=""
+        while len(word)<= long :
+            word+=secrets.choice(alpha)
+        wordlist.append(word)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 output=open(arg.output,"w")
